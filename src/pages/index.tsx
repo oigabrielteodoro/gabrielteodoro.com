@@ -1,3 +1,9 @@
+import { Typography } from "~/ui";
+
 export default function Home() {
-  return <h1>Hello, from Stitches</h1>;
+  return (
+    <Typography type="title" weight="regular">
+      Hello, from Stitches
+    </Typography>
+  );
 }
