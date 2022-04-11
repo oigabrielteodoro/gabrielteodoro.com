@@ -1,9 +1,5 @@
-import { Typography } from "~/ui";
+import { Layout } from "~/ui";
 
 export default function Home() {
-  return (
-    <Typography type="title" weight="regular">
-      Hello, from Stitches
-    </Typography>
-  );
+  return <Layout />;
 }
