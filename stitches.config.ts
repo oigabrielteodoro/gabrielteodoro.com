@@ -3,16 +3,20 @@ import { createStitches } from "@stitches/react";
 export const { styled, getCssText } = createStitches({
   theme: {
     fonts: {
-      system: "system-ui",
+      title: "DM Sans",
+      text: "Poppins",
     },
     colors: {
-      hiContrast: "hsl(206,10%,5%)",
-      loContrast: "white",
+      black: "#000000",
+      white: "#ffffff",
     },
     fontSizes: {
-      1: "13px",
-      2: "15px",
-      3: "17px",
+      1: "12px",
+      2: "14px",
+      3: "16px",
+      4: "18px",
+      5: "20px",
+      6: "24px",
     },
   },
 });
