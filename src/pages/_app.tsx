@@ -15,7 +15,9 @@ const globalStyles = globalCss({
     fontFamily: "$text",
   },
   body: {
-    backgroundColor: "$white",
+    width: "100vw",
+    backgroundColor: "$neutral900",
+    overflowX: "hidden",
   },
   button: {
     cursor: "pointer",
