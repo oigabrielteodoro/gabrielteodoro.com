@@ -31,14 +31,8 @@ export const Card = styled("div", {
     transform: "translateX(1.6rem)",
     borderColor: "$blue500",
   },
-
-  variants: {
-    active: {
-      true: {
-        zIndex: 1,
-        boxShadow: "0.2rem 2.7rem 2rem -0.4rem rgba(0, 0, 0, 0.1)",
-      },
-    },
+  "&:active": {
+    transform: "scale(0.98)",
   },
 
   small: {
@@ -103,4 +97,9 @@ export const TechUsedIcon = styled("img", {
   height: "4.2rem",
   width: "4.2rem",
   borderRadius: "0.5rem",
+  transition: "transform 300ms",
+
+  "&:hover": {
+    transform: "translateY(-0.8rem)",
+  },
 });

@@ -9,7 +9,7 @@ export function Profile() {
   return (
     <S.Container>
       <div>
-        <S.Card active>
+        <S.Card>
           <S.CardTitle active>
             <strong>Front-End</strong>
             <FiLayout size={24} />
