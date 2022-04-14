@@ -1,5 +1,14 @@
-import { Layout } from "~/ui";
+import { Header, Shape } from "~/ui";
+import { Profile } from "~/ui/_layouts";
 
 export default function Home() {
-  return <Layout />;
+  return (
+    <>
+      <Header />
+      <main>
+        <Profile />
+      </main>
+      <Shape />
+    </>
+  );
 }

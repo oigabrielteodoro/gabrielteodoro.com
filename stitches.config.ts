@@ -1,6 +1,6 @@
 import { createStitches } from "@stitches/react";
 
-export const { styled, getCssText } = createStitches({
+export const { styled, getCssText, keyframes } = createStitches({
   theme: {
     fonts: {
       title: "DM Sans",
@@ -9,14 +9,46 @@ export const { styled, getCssText } = createStitches({
     colors: {
       black: "#000000",
       white: "#ffffff",
+
+      // Neutral
+
+      neutral300: "#9aa6b1",
+      neutral500: "#768696",
+      neutral800: "#25262a",
+      neutral900: "#1e1f21",
+
+      // Blue
+
+      blue500: "#5d6Aff",
+    },
+    space: {
+      1: "8px",
+      2: "12px",
+      3: "16px",
+      4: "24px",
+      5: "32px",
+      6: "40px",
+      7: "48px",
     },
     fontSizes: {
-      1: "12px",
-      2: "14px",
-      3: "16px",
-      4: "18px",
-      5: "20px",
-      6: "24px",
+      disclaimer: "12px",
+      small: "14px",
+      paragraph: "16px",
+      large: "18px",
+      subtitle: "20px",
+      title: "24px",
+    },
+    fontWeights: {
+      regular: "400",
+      medium: "500",
+      bold: "700",
+    },
+    borderStyles: {
+      rounded: "50%",
+      button: "0.5rem",
+    },
+    sizes: {
+      grid: "110rem",
     },
   },
 });
