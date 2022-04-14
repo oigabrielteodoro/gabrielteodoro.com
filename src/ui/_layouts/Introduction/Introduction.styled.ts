@@ -35,6 +35,10 @@ export const Box = styled("div", {
   flexDirection: "column",
   animation: `${boxAnimationFadeIn} 1s`,
 
+  p: {
+    maxWidth: "53%",
+    marginBottom: "$4",
+  },
   button: {
     width: "14rem",
   },
@@ -69,53 +73,6 @@ export const Avatar = styled("img", {
   width: "5.2rem",
   borderRadius: "50%",
   marginRight: "$3",
-});
-
-export const Description = styled("p", {
-  position: "relative",
-  color: "$neutral500",
-  fontSize: "$paragraph",
-  maxWidth: "53%",
-  padding: "$1 $3",
-  transition: "300ms",
-  marginBottom: "$4",
-
-  "&::before": {
-    content: "",
-    position: "absolute",
-    backgroundColor: "$blue500",
-    left: 0,
-    top: 0,
-    bottom: 0,
-    width: "0.4rem",
-    borderRadius: "0.5rem",
-  },
-
-  "&:hover b": {
-    color: "$white",
-
-    "&::before": {
-      width: "100%",
-    },
-  },
-
-  b: {
-    position: "relative",
-    color: "$neutral300",
-    fontWeight: "$medium",
-    transition: "300ms",
-
-    "&::before": {
-      content: "",
-      position: "absolute",
-      backgroundColor: "$blue500",
-      width: 0,
-      top: 0,
-      bottom: 0,
-      transition: "300ms",
-      zIndex: -1,
-    },
-  },
 });
 
 export const InformationsList = styled("ul", {

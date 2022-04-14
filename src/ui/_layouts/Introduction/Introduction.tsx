@@ -1,7 +1,7 @@
 import { AiOutlineExperiment } from "react-icons/ai";
 import { FiBriefcase, FiGithub } from "react-icons/fi";
 
-import { Button } from "~/ui";
+import { Button, Annotation } from "~/ui";
 
 import * as S from "./Introduction.styled";
 
@@ -17,11 +17,11 @@ export function Introduction() {
             <small>Front-End Developer</small>
           </section>
         </S.UserBox>
-        <S.Description>
+        <Annotation>
           I&apos;m <b>Product Developer</b> to 5 years. I started study
           programming with 13 years age. I really like Front-End and all
           technologies around <b>TypeScript with React</b>
-        </S.Description>
+        </Annotation>
         <Button>View more</Button>
       </S.Box>
       <S.InformationsList>
