@@ -18,6 +18,7 @@ const globalStyles = globalCss({
     width: "100vw",
     backgroundColor: "$neutral900",
     overflowX: "hidden",
+    paddingBottom: "10rem",
   },
   button: {
     cursor: "pointer",

@@ -1,5 +1,5 @@
 import { Header, Shape } from "~/ui";
-import { Introduction } from "~/ui/_layouts";
+import { Introduction, Profile } from "~/ui/_layouts";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Header />
       <main>
         <Introduction />
+        <Profile />
       </main>
       <Shape />
     </>

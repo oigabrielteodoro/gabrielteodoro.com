@@ -21,6 +21,11 @@ export const Button = styled("button", {
       blue: {
         backgroundColor: "$blue500",
       },
+      link: {
+        padding: 0,
+        background: "transparent",
+        textDecoration: "underline",
+      },
     },
   },
 });
