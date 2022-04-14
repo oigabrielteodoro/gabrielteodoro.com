@@ -3,9 +3,9 @@ import { FiBriefcase, FiGithub } from "react-icons/fi";
 
 import { Button } from "~/ui";
 
-import * as S from "./Profile.styled";
+import * as S from "./Introduction.styled";
 
-export function Profile() {
+export function Introduction() {
   return (
     <S.Container>
       <S.Box>
