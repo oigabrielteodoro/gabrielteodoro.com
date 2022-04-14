@@ -11,6 +11,17 @@ const boxAnimationFadeIn = keyframes({
   },
 });
 
+const informationsListAnimationFadeIn = keyframes({
+  "0%": {
+    opacity: 0,
+    transform: "translateX(50%)",
+  },
+  "100%": {
+    opacity: 1,
+    transform: "translateX(0)",
+  },
+});
+
 export const Container = styled("section", {
   display: "flex",
   alignItems: "center",
@@ -47,9 +58,9 @@ export const UserBox = styled("div", {
     color: "$white",
     fontSize: "$paragraph",
   },
-  span: {
-    color: "$white",
+  small: {
     fontSize: "$small",
+    color: "$neutral300",
   },
 });
 
@@ -110,6 +121,7 @@ export const Description = styled("p", {
 export const InformationsList = styled("ul", {
   display: "flex",
   flexDirection: "column",
+  animation: `${informationsListAnimationFadeIn} 1s`,
 
   li: {
     display: "flex",
@@ -134,7 +146,7 @@ export const InformationsList = styled("ul", {
       strong: {
         fontSize: "$title",
       },
-      span: {
+      small: {
         color: "$neutral300",
         fontSize: "$disclaimer",
         whiteSpace: "nowrap",

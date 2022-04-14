@@ -7,7 +7,7 @@ export const Button = styled("button", {
   color: "$white",
   fontWeight: "$medium",
   fontSize: "$paragraph",
-  transition: "300ms",
+  transition: "opacity 300ms",
 
   "&:hover": {
     opacity: 0.8,

@@ -14,7 +14,7 @@ export function Profile() {
           <S.Avatar src="https://github.com/oigabrielteodoro.png" />
           <section>
             <strong>Gabriel Teodoro</strong>
-            <span>Front-End Developer</span>
+            <small>Front-End Developer</small>
           </section>
         </S.UserBox>
         <S.Description>
@@ -32,7 +32,7 @@ export function Profile() {
             </div>
             <div className="textBox">
               <strong>+5</strong>
-              <span>Years of experience</span>
+              <small>Years of experience</small>
             </div>
           </li>
           <li>
@@ -41,7 +41,7 @@ export function Profile() {
             </div>
             <div className="textBox">
               <strong>Middle</strong>
-              <span>Front-End Developer</span>
+              <small>Front-End Developer</small>
             </div>
           </li>
           <li>
@@ -50,7 +50,7 @@ export function Profile() {
             </div>
             <div className="textBox">
               <strong>+250</strong>
-              <span>Contributions this year</span>
+              <small>Contributions this year</small>
             </div>
           </li>
         </ul>
