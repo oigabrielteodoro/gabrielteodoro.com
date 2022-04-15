@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { styled } from "~/../stitches.config";
 
 export const Container = styled("section", {
@@ -19,7 +21,7 @@ export const Card = styled("div", {
   background: "$neutral800",
   padding: "$6",
   marginBottom: "$3",
-  borderRadius: "0.5rem",
+  borderRadius: "0.8rem",
   display: "flex",
   flexDirection: "column",
   transition: "transform 300ms, border-color 300ms",
@@ -72,7 +74,7 @@ export const CardTitle = styled("div", {
   },
 });
 
-export const InformationBox = styled("div", {
+export const InformationBox = styled(motion.div, {
   display: "flex",
   flexDirection: "column",
 
@@ -96,7 +98,7 @@ export const InformationBox = styled("div", {
 export const TechUsedIcon = styled("img", {
   height: "4.2rem",
   width: "4.2rem",
-  borderRadius: "0.5rem",
+  borderRadius: "0.8rem",
   transition: "transform 300ms",
 
   "&:hover": {

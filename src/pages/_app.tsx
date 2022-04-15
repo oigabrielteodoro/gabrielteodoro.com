@@ -16,7 +16,7 @@ const globalStyles = globalCss({
   },
   body: {
     width: "100vw",
-    backgroundColor: "$neutral900",
+    background: "#181B21",
     overflowX: "hidden",
     paddingBottom: "10rem",
   },

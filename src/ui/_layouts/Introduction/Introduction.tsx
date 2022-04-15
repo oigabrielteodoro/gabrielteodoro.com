@@ -2,19 +2,20 @@ import { AiOutlineExperiment } from "react-icons/ai";
 import { FiBriefcase, FiGithub } from "react-icons/fi";
 
 import { Button, Annotation } from "~/ui";
+import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 
 import * as S from "./Introduction.styled";
 
 export function Introduction() {
   return (
     <S.Container>
-      <S.Box>
+      <S.Box {...leftFadeIn()}>
         <S.HelloText>Hello there 👋</S.HelloText>
         <S.UserBox>
           <S.Avatar src="https://github.com/oigabrielteodoro.png" />
           <section>
             <strong>Gabriel Teodoro</strong>
-            <small>Front-End Developer</small>
+            <small>Product Developer</small>
           </section>
         </S.UserBox>
         <Annotation>
@@ -24,7 +25,7 @@ export function Introduction() {
         </Annotation>
         <Button>View more</Button>
       </S.Box>
-      <S.InformationsList>
+      <S.InformationsList {...rightFadeIn()}>
         <ul>
           <li>
             <div className="iconBox">

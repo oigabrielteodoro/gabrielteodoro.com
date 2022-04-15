@@ -15,7 +15,7 @@ export const Annotation = styled("p", {
     top: 0,
     bottom: 0,
     width: "0.4rem",
-    borderRadius: "0.5rem",
+    borderRadius: "0.8rem",
   },
 
   "&:hover b": {

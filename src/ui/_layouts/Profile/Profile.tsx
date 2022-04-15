@@ -1,14 +1,17 @@
+import { motion } from "framer-motion";
+
 import { FiLayout } from "react-icons/fi";
 import { BiServer } from "react-icons/bi";
 
 import { Button, Annotation } from "~/ui";
+import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 
 import * as S from "./Profile.styled";
 
 export function Profile() {
   return (
     <S.Container>
-      <div>
+      <motion.div {...leftFadeIn({ transition: { delay: 0.5 } })}>
         <S.Card>
           <S.CardTitle active>
             <strong>Front-End</strong>
@@ -25,8 +28,8 @@ export function Profile() {
           <small>I develop back-end scalable and performative</small>
           <Button type="link">See more</Button>
         </S.Card>
-      </div>
-      <S.InformationBox>
+      </motion.div>
+      <S.InformationBox {...rightFadeIn({ transition: { delay: 0.5 } })}>
         <S.Title>
           Talk is cheap. <br />
           Show me the code!

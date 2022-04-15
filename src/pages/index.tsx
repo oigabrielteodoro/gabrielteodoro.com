@@ -1,4 +1,4 @@
-import { Header, Shape } from "~/ui";
+import { Header } from "~/ui";
 import { Introduction, Profile } from "~/ui/_layouts";
 
 export default function Home() {
@@ -9,7 +9,6 @@ export default function Home() {
         <Introduction />
         <Profile />
       </main>
-      <Shape />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { styled } from "~/../stitches.config";
 
 export const Button = styled("button", {
-  borderRadius: "0.5rem",
+  borderRadius: "0.8rem",
   padding: "$3",
   border: 0,
   color: "$white",

@@ -14,8 +14,9 @@ export const { styled, getCssText, keyframes } = createStitches({
 
       neutral300: "#9aa6b1",
       neutral500: "#768696",
-      neutral800: "#242628",
-      neutral900: "#1e1f21",
+      neutral700: "#2F3138",
+      neutral800: "#20242c",
+      neutral900: "#181b21",
 
       // Blue
 
@@ -45,7 +46,7 @@ export const { styled, getCssText, keyframes } = createStitches({
     },
     borderStyles: {
       rounded: "50%",
-      button: "0.5rem",
+      button: "1rem",
       card: "0.5rem",
     },
     sizes: {

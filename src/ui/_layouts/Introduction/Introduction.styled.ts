@@ -1,26 +1,6 @@
-import { styled, keyframes } from "~/../stitches.config";
+import { motion } from "framer-motion";
 
-const boxAnimationFadeIn = keyframes({
-  "0%": {
-    opacity: 0,
-    transform: "translateX(-10%)",
-  },
-  "100%": {
-    opacity: 1,
-    transform: "translateX(0)",
-  },
-});
-
-const informationsListAnimationFadeIn = keyframes({
-  "0%": {
-    opacity: 0,
-    transform: "translateX(50%)",
-  },
-  "100%": {
-    opacity: 1,
-    transform: "translateX(0)",
-  },
-});
+import { styled } from "~/../stitches.config";
 
 export const Container = styled("section", {
   display: "flex",
@@ -30,10 +10,10 @@ export const Container = styled("section", {
   margin: "15rem auto 0",
 });
 
-export const Box = styled("div", {
+export const Box = styled(motion.div, {
   display: "flex",
   flexDirection: "column",
-  animation: `${boxAnimationFadeIn} 1s`,
+  position: "relative",
 
   p: {
     maxWidth: "53%",
@@ -75,10 +55,9 @@ export const Avatar = styled("img", {
   marginRight: "$3",
 });
 
-export const InformationsList = styled("ul", {
+export const InformationsList = styled(motion.ul, {
   display: "flex",
   flexDirection: "column",
-  animation: `${informationsListAnimationFadeIn} 1s`,
 
   li: {
     display: "flex",
@@ -92,7 +71,7 @@ export const InformationsList = styled("ul", {
       alignItems: "center",
       justifyContent: "center",
       marginRight: "1.8rem",
-      borderRadius: "0.5rem",
+      borderRadius: "0.8rem",
       color: "$white",
     },
     ".textBox": {
