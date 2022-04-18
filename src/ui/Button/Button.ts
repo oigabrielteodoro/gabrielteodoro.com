@@ -17,14 +17,18 @@ export const Button = styled("button", {
     type: "blue",
   },
   variants: {
+    color: {
+      neutral: {
+        color: "$neutral300",
+      },
+    },
     type: {
       blue: {
         backgroundColor: "$blue500",
       },
-      link: {
+      text: {
         padding: 0,
         background: "transparent",
-        textDecoration: "underline",
       },
     },
   },

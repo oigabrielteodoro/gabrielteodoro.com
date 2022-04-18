@@ -66,6 +66,7 @@ export const CardTitle = styled("div", {
 
   svg: {
     color: "$neutral300",
+    transition: "color 300ms",
   },
   strong: {
     fontSize: "$large",

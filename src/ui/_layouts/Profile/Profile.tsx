@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { FiLayout } from "react-icons/fi";
@@ -8,25 +9,37 @@ import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 
 import * as S from "./Profile.styled";
 
+type CardType = "Front-End" | "Back-End";
+
 export function Profile() {
+  const [activeCard, setActiveCard] = useState<CardType>("Front-End");
+
+  function handleActiveCard(cardType: CardType) {
+    setActiveCard(cardType);
+  }
+
   return (
     <S.Container>
       <motion.div {...leftFadeIn({ transition: { delay: 0.5 } })}>
-        <S.Card>
-          <S.CardTitle active>
+        <S.Card onClick={() => handleActiveCard("Front-End")}>
+          <S.CardTitle active={activeCard === "Front-End"}>
             <strong>Front-End</strong>
             <FiLayout size={24} />
           </S.CardTitle>
           <small>I develop front-end with coding super smooth</small>
-          <Button type="link">See more</Button>
+          <Button type="text" color="neutral">
+            3 projects
+          </Button>
         </S.Card>
-        <S.Card>
-          <S.CardTitle>
+        <S.Card onClick={() => handleActiveCard("Back-End")}>
+          <S.CardTitle active={activeCard === "Back-End"}>
             <strong>Back-End</strong>
             <BiServer size={24} />
           </S.CardTitle>
           <small>I develop back-end scalable and performative</small>
-          <Button type="link">See more</Button>
+          <Button type="text" color="neutral">
+            5 projects
+          </Button>
         </S.Card>
       </motion.div>
       <S.InformationBox {...rightFadeIn({ transition: { delay: 0.5 } })}>
