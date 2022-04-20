@@ -8,6 +8,7 @@ import { Button, Annotation } from "~/ui";
 import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 
 import * as S from "./Profile.styled";
+import { Tooltip } from "~/ui/Tooltip";
 
 type CardType = "Front-End" | "Back-End";
 
@@ -53,30 +54,58 @@ export function Profile() {
         </Annotation>
         <strong>I use this tecnologies:</strong>
         <ul>
-          <li>
+          <Tooltip
+            as="li"
+            message={
+              <S.TechUsedText>
+                React.js é utilizado para construção de interfaces.
+              </S.TechUsedText>
+            }
+          >
             <S.TechUsedIcon
               src="https://gabrielteodoro.com/static/img/techs/react.svg"
               alt="React.js"
             />
-          </li>
-          <li>
+          </Tooltip>
+          <Tooltip
+            as="li"
+            message={
+              <S.TechUsedText>
+                Next.js é utilizado para construção de interfaces.
+              </S.TechUsedText>
+            }
+          >
             <S.TechUsedIcon
               src="https://gabrielteodoro.com/static/img/techs/next.svg"
               alt="NextJS"
             />
-          </li>
-          <li>
+          </Tooltip>
+          <Tooltip
+            as="li"
+            message={
+              <S.TechUsedText>
+                TypeScript é utilizado para construção de interfaces.
+              </S.TechUsedText>
+            }
+          >
             <S.TechUsedIcon
               src="https://gabrielteodoro.com/static/img/techs/typescript.svg"
               alt="TypeScript"
             />
-          </li>
-          <li>
+          </Tooltip>
+          <Tooltip
+            as="li"
+            message={
+              <S.TechUsedText>
+                JavaScript é utilizado para construção de interfaces.
+              </S.TechUsedText>
+            }
+          >
             <S.TechUsedIcon
               src="https://gabrielteodoro.com/static/img/techs/javascript.svg"
               alt="JavaScript"
             />
-          </li>
+          </Tooltip>
         </ul>
       </S.InformationBox>
     </S.Container>

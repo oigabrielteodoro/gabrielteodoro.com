@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { styled } from "~/../stitches.config";
+import { styled } from "~/stitches.config";
 
 export const Container = styled("section", {
   maxWidth: "$grid",
@@ -101,8 +101,8 @@ export const TechUsedIcon = styled("img", {
   width: "4.2rem",
   borderRadius: "0.8rem",
   transition: "transform 300ms",
+});
 
-  "&:hover": {
-    transform: "translateY(-0.8rem)",
-  },
+export const TechUsedText = styled("p", {
+  width: "20rem",
 });

@@ -1,4 +1,4 @@
-import { styled } from "~/../stitches.config";
+import { styled } from "~/stitches.config";
 
 export const Annotation = styled("p", {
   position: "relative",
