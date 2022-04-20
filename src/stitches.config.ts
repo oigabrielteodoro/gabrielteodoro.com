@@ -14,9 +14,9 @@ export const { styled, getCssText, keyframes } = createStitches({
 
       neutral300: "#9aa6b1",
       neutral500: "#768696",
-      neutral700: "#2F3138",
-      neutral800: "#20242c",
-      neutral900: "#181b21",
+      neutral600: "#2F3138",
+      neutral700: "#20242c",
+      neutral800: "#181b21",
 
       // Blue
 

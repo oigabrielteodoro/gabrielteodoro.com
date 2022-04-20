@@ -2,7 +2,7 @@ import { styled } from "~/stitches.config";
 
 export const Box = styled("header", {
   padding: "$5",
-  // backgroundColor: "$neutral900",
+  // backgroundColor: "$neutral800",
 });
 
 export const Content = styled("div", {

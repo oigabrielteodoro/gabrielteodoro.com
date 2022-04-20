@@ -8,10 +8,10 @@ export const BaseElement = styled("div", {
 export const Container = styled("div", {
   position: "absolute",
   color: "$neutral300",
-  background: "$neutral900",
+  background: "$neutral800",
   padding: "$3",
   borderRadius: "0.8rem",
-  border: "0.2rem solid $neutral800",
+  border: "0.2rem solid $neutral700",
   fontSize: "$small",
   boxShadow: "0 0 10rem rgba(0, 0, 0, 0.1)",
 
@@ -27,7 +27,7 @@ export const Container = styled("div", {
           position: "absolute",
           borderStyle: "solid",
           borderWidth: "0.6rem 0.6rem 0 0.6rem",
-          borderColor: "$neutral800 transparent transparent transparent",
+          borderColor: "$neutral700 transparent transparent transparent",
           bottom: "-0.8rem",
           left: "50%",
           transform: "translateX(-50%)",

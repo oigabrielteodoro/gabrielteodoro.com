@@ -11,14 +11,14 @@ export const Container = styled("section", {
 });
 
 export const Title = styled("h1", {
-  fontSize: "40px",
+  fontSize: "4rem",
   color: "$white",
   fontWeight: "$regular",
   marginBottom: "$4",
 });
 
 export const Card = styled("div", {
-  background: "$neutral800",
+  background: "$neutral700",
   padding: "$6",
   marginBottom: "$3",
   borderRadius: "0.8rem",

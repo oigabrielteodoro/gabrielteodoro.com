@@ -1,5 +1,5 @@
 import { Header } from "~/ui";
-import { Introduction, Profile } from "~/ui/_layouts";
+import { Introduction, Profile, Career } from "~/ui/_layouts";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <main>
         <Introduction />
         <Profile />
+        <Career />
       </main>
     </>
   );
