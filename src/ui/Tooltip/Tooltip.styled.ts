@@ -33,9 +33,6 @@ export const Container = styled("div", {
           transform: "translateX(-50%)",
         },
       },
-      bottom: {},
-      left: {},
-      right: {},
     },
   },
 });

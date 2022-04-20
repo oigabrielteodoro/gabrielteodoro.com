@@ -7,7 +7,7 @@ export type TooltipProps = {
   as?: ElementType;
   message: ReactNode;
   children: ReactNode;
-  placement?: "top" | "bottom" | "left" | "right";
+  placement?: "top";
 };
 
 export function Tooltip({
