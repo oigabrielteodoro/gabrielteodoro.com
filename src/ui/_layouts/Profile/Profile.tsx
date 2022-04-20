@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import { FiLayout } from "react-icons/fi";
 import { BiServer } from "react-icons/bi";
 
-import { Button, Annotation } from "~/ui";
+import { Button, Annotation, Tooltip } from "~/ui";
 import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 
 import * as S from "./Profile.styled";
-import { Tooltip } from "~/ui/Tooltip";
 
 type CardType = "Front-End" | "Back-End";
 

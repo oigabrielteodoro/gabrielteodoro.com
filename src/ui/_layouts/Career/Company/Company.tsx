@@ -1,17 +1,31 @@
+import Link from "next/link";
+
 import * as S from "./Company.styled";
 
 type Props = {
   name: string;
+  link: string;
   activity: string;
   imageUrl: string;
   workload?: string;
   time?: string;
 };
 
-export function Company({ name, activity, workload, time, imageUrl }: Props) {
+export function Company({
+  name,
+  link,
+  activity,
+  workload,
+  time,
+  imageUrl,
+}: Props) {
   return (
     <S.Container>
-      <S.CompanyImage width={52} height={52} src={imageUrl} alt={name} />
+      <Link href={link} passHref>
+        <a target="_blank">
+          <S.CompanyImage width={52} height={52} src={imageUrl} alt={name} />
+        </a>
+      </Link>
       <S.CompanyInfo>
         <strong>
           {name} {time && <small>{time}</small>}

@@ -9,12 +9,13 @@ export const Container = styled("div", {
   position: "absolute",
   color: "$neutral300",
   background: "$neutral800",
-  padding: "$3",
   borderRadius: "0.8rem",
   border: "0.2rem solid $neutral700",
-  fontSize: "$small",
-  boxShadow: "0 0 10rem rgba(0, 0, 0, 0.1)",
 
+  defaultVariants: {
+    placement: "top",
+    size: "medium",
+  },
   variants: {
     placement: {
       top: {
@@ -32,6 +33,16 @@ export const Container = styled("div", {
           left: "50%",
           transform: "translateX(-50%)",
         },
+      },
+    },
+    size: {
+      small: {
+        padding: "$1 $2",
+        fontSize: "$disclaimer",
+      },
+      medium: {
+        padding: "$3",
+        fontSize: "$small",
       },
     },
   },

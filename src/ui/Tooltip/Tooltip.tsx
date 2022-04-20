@@ -8,6 +8,7 @@ export type TooltipProps = {
   message: ReactNode;
   children: ReactNode;
   placement?: "top";
+  size?: "small" | "medium";
 };
 
 export function Tooltip({
@@ -15,6 +16,7 @@ export function Tooltip({
   children,
   message,
   placement = "top",
+  size = "medium",
 }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -35,7 +37,9 @@ export function Tooltip({
               visible: { opacity: 1, scale: 1 },
             }}
           >
-            <S.Container placement={placement}>{message}</S.Container>
+            <S.Container size={size} placement={placement}>
+              {message}
+            </S.Container>
           </motion.div>
         )}
       </AnimatePresence>

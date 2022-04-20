@@ -31,4 +31,9 @@ export const CompanyInfo = styled("div", {
 export const CompanyImage = styled(Image, {
   borderRadius: "0.8rem",
   border: "0.1rem solid $neutral700 !important",
+  transition: "300ms",
+
+  "&:hover": {
+    opacity: 0.5,
+  },
 });
