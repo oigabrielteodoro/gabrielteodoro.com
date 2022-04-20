@@ -1,9 +1,23 @@
+import { motion } from "framer-motion";
 import { styled } from "~/stitches.config";
 
 export const Container = styled("section", {
   background: "#15181e",
   padding: "$7 0",
   marginTop: "10rem",
+  transition: "1s",
+
+  variants: {
+    inView: {
+      false: {
+        maxWidth: 0,
+      },
+      true: {
+        width: "100%",
+        maxWidth: "100vw",
+      },
+    },
+  },
 });
 
 export const Content = styled("div", {
@@ -32,7 +46,7 @@ export const Diviser = styled("hr", {
   margin: "$6 0",
 });
 
-export const CompaniesList = styled("ul", {
+export const CompaniesList = styled(motion.ul, {
   display: "grid",
   gridGap: "$5",
   background: "$neutral800",
