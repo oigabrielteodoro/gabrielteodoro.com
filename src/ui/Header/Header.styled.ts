@@ -1,3 +1,5 @@
+import { FiChevronDown } from "react-icons/fi";
+
 import { styled } from "~/stitches.config";
 
 export const Box = styled("header", {
@@ -12,9 +14,15 @@ export const Content = styled("div", {
   justifyContent: "space-between",
 });
 
-export const Navigation = styled("ul", {
+export const NavigationBox = styled("nav", {
   display: "flex",
   alignItems: "center",
+});
+
+export const NavigationList = styled("ul", {
+  display: "flex",
+  alignItems: "center",
+  marginRight: "$5",
 
   li: {
     button: {
@@ -33,4 +41,15 @@ export const Navigation = styled("ul", {
       marginLeft: "$5",
     },
   },
+});
+
+export const CountryFlag = styled("img", {
+  marginRight: "$3",
+  width: "3.2rem",
+  borderRadius: "0.4rem",
+});
+
+export const ChevronDownWithMargin = styled(FiChevronDown, {
+  marginLeft: "$3",
+  color: "$neutral300",
 });

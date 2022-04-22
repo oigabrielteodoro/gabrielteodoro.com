@@ -8,6 +8,8 @@ export const Button = styled("button", {
   fontWeight: "$medium",
   fontSize: "$paragraph",
   transition: "opacity 300ms",
+  display: "flex",
+  alignItems: "center",
 
   "&:hover": {
     opacity: 0.8,
@@ -25,6 +27,9 @@ export const Button = styled("button", {
     type: {
       blue: {
         backgroundColor: "$blue500",
+      },
+      neutral: {
+        backgroundColor: "$neutral700",
       },
       text: {
         padding: 0,
