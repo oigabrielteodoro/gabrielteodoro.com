@@ -16,6 +16,8 @@ export const CompanyInfo = styled("div", {
     fontSize: "$large",
     fontWeight: "$medium",
     color: "$white",
+    display: "flex",
+    alignItems: "center",
 
     small: {
       fontSize: "$disclaimer",

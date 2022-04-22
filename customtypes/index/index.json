@@ -1,0 +1,47 @@
+{
+  "id": "index",
+  "label": "Index Content",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,strong"
+        }
+      },
+      "seniority": {
+        "type": "Text",
+        "config": {
+          "label": "Seniority",
+          "placeholder": ""
+        }
+      },
+      "occupation": {
+        "type": "Text",
+        "config": {
+          "label": "Occupation",
+          "placeholder": ""
+        }
+      },
+      "fullName": {
+        "type": "Text",
+        "config": {
+          "label": "Full Name",
+          "placeholder": ""
+        }
+      },
+      "welcomeText": {
+        "type": "Text",
+        "config": {
+          "label": "Welcome Text",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

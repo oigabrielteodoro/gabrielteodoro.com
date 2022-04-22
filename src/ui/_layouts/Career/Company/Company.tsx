@@ -1,38 +1,48 @@
 import Link from "next/link";
+import { PrismicRichText } from "@prismicio/react";
+import { formatDistance, formatDistanceToNow } from "date-fns";
+import type { PrismicDocument } from "@prismicio/types";
 
 import * as S from "./Company.styled";
+import type { Company as CompanyType } from "~/types";
 
 type Props = {
-  name: string;
-  link: string;
-  activity: string;
-  imageUrl: string;
-  workload?: string;
-  time?: string;
+  showTime?: boolean;
+  showWorkload?: boolean;
+  company: PrismicDocument<CompanyType>;
 };
 
 export function Company({
-  name,
-  link,
-  activity,
-  workload,
-  time,
-  imageUrl,
+  company,
+  showTime = true,
+  showWorkload = true,
 }: Props) {
+  const { joinedAt, exitedAt, url, logo, occupation, workload, name } =
+    company.data;
+
+  const time = exitedAt
+    ? formatDistance(new Date(joinedAt), new Date(exitedAt))
+    : formatDistanceToNow(new Date(joinedAt));
+
   return (
     <S.Container>
-      <Link href={link} passHref>
+      <Link href={url} passHref>
         <a target="_blank">
-          <S.CompanyImage width={52} height={52} src={imageUrl} alt={name} />
+          <S.CompanyImage
+            width={52}
+            height={52}
+            src={logo.url!}
+            alt={logo.alt!}
+          />
         </a>
       </Link>
       <S.CompanyInfo>
         <strong>
-          {name} {time && <small>{time}</small>}
+          <PrismicRichText field={name} /> {showTime && <small>{time}</small>}
         </strong>
         <small>
-          {activity}
-          {workload ? ` • ${workload}` : ""}
+          {occupation}
+          {showWorkload ? ` • ${workload}` : ""}
         </small>
       </S.CompanyInfo>
     </S.Container>

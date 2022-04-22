@@ -1,0 +1,81 @@
+{
+  "id": "company-id",
+  "label": "companies",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "joinedAt": {
+        "type": "Timestamp",
+        "config": {
+          "label": "Joined At",
+          "placeholder": ""
+        }
+      },
+      "exitedAt": {
+        "type": "Timestamp",
+        "config": {
+          "label": "Exited At",
+          "placeholder": ""
+        }
+      },
+      "name": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Name",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "workload": {
+        "type": "Select",
+        "config": {
+          "label": "Workload",
+          "placeholder": "",
+          "options": [
+            "Full-time",
+            "Part-time"
+          ],
+          "default_value": "Full-time"
+        }
+      },
+      "occupation": {
+        "type": "Select",
+        "config": {
+          "label": "Occupation",
+          "placeholder": "",
+          "options": [
+            "Front-End Developer",
+            "Back-End Developer",
+            "Full-Stack Developer",
+            "Mobile Developer"
+          ],
+          "default_value": "Front-End Developer"
+        }
+      },
+      "url": {
+        "type": "Text",
+        "config": {
+          "label": "Url",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

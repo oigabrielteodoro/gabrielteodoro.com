@@ -1,0 +1,14 @@
+{
+  "_cts": {
+    "company-id": {},
+    "actualCompany": {},
+    "index": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  }
+}

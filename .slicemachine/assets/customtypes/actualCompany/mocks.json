@@ -1,0 +1,11 @@
+{
+  "id": "c03f33a3-4bf0-4e70-accc-46e49e8905c5",
+  "uid": "et-aut-qui",
+  "type": "actualCompany",
+  "data": {
+    "company": {
+      "link_type": "Web",
+      "url": "https://prismic.io"
+    }
+  }
+}

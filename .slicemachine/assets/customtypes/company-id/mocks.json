@@ -1,0 +1,28 @@
+{
+  "id": "9b9b6d66-5c9f-47f7-89a0-b61724e9fbe0",
+  "uid": "natus-modi-autem",
+  "type": "company-id",
+  "data": {
+    "logo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
+    },
+    "joinedAt": "2016-08-11T02:19:54.824Z",
+    "exitedAt": "2020-06-05T10:50:16.074Z",
+    "name": [
+      {
+        "type": "paragraph",
+        "text": "Aute quis eu exercitation sint cillum eiusmod exercitation cupidatat pariatur consectetur ipsum do deserunt incididunt duis. Tempor magna aliqua ea. Magna Lorem consectetur aliquip laboris amet duis proident sunt dolor ea.",
+        "spans": []
+      }
+    ],
+    "workload": "Full-time",
+    "occupation": "Back-End Developer",
+    "url": "enhance frictionless synergies"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "actualCompany",
+  "label": "Actual Company",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "company": {
+        "type": "Link",
+        "config": {
+          "label": "Company Id",
+          "select": "document",
+          "customtypes": [
+            "company-id"
+          ]
+        }
+      }
+    }
+  }
+}
