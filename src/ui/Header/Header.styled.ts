@@ -2,7 +2,6 @@ import { styled } from "~/stitches.config";
 
 export const Box = styled("header", {
   padding: "$5",
-  // backgroundColor: "$neutral800",
 });
 
 export const Content = styled("div", {
@@ -11,11 +10,6 @@ export const Content = styled("div", {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-});
-
-export const Logo = styled("span", {
-  color: "$white",
-  fontSize: "$large",
 });
 
 export const Navigation = styled("ul", {

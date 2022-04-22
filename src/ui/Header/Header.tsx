@@ -1,12 +1,12 @@
+import { Logo } from "~/ui";
+
 import * as S from "./Header.styled";
 
 export function Header() {
   return (
     <S.Box>
       <S.Content>
-        <S.Logo>
-          <b>Gabriel</b> Teodoro
-        </S.Logo>
+        <Logo />
         <nav>
           <S.Navigation>
             <li>
