@@ -1,4 +1,4 @@
-import { Header } from "~/ui";
+import { Footer, Header } from "~/ui";
 import { Introduction, Profile, Career } from "~/ui/_layouts";
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
         <Profile />
         <Career />
       </main>
+      <Footer />
     </>
   );
 }
