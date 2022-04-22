@@ -41,6 +41,47 @@
           "label": "Welcome Text",
           "placeholder": ""
         }
+      },
+      "profileTitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Profile Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "profileDescription": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Profile Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,strong"
+        }
+      },
+      "profileUseThisTecnologies": {
+        "type": "Text",
+        "config": {
+          "label": "Profile Use This Tecnologies",
+          "placeholder": ""
+        }
+      },
+      "careerTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Career Title",
+          "placeholder": ""
+        }
+      },
+      "careerDescription": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Career Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
       }
     }
   }

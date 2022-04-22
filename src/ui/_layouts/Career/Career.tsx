@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import type { PrismicDocument } from "@prismicio/types";
+import { PrismicRichText } from "@prismicio/react";
+import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
 import { Annotation } from "~/ui";
 import { leftFadeIn } from "~/ui/_animations";
@@ -14,9 +15,17 @@ import * as S from "./Career.styled";
 type Props = {
   companies: PrismicDocument<CompanyType>[];
   actualCompany: PrismicDocument<CompanyType>;
+  content: {
+    title: string;
+    description: RichTextField;
+  };
 };
 
-export function Career({ actualCompany, companies }: Props) {
+export function Career({
+  actualCompany,
+  companies,
+  content: { title, description },
+}: Props) {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
@@ -26,11 +35,9 @@ export function Career({ actualCompany, companies }: Props) {
       {inView && (
         <S.Content>
           <motion.div {...leftFadeIn({ transition: { delay: 0.6 } })}>
-            <S.Title>It&apos;s 5 years of career...</S.Title>
+            <S.Title>{title}</S.Title>
             <Annotation>
-              My career summarized in activities in the companies
-              <br />
-              where I worked.
+              <PrismicRichText field={description} />
             </Annotation>
             <S.Diviser />
             <Company

@@ -1,27 +1,39 @@
+import { PrismicRichText } from "@prismicio/react";
 import { AiOutlineExperiment } from "react-icons/ai";
 import { FiBriefcase, FiGithub } from "react-icons/fi";
 
 import { Button, Annotation } from "~/ui";
 import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 
+import type { IndexContent } from "~/types";
+
 import * as S from "./Introduction.styled";
 
-export function Introduction() {
+type Props = Pick<
+  IndexContent,
+  "welcomeText" | "description" | "fullName" | "occupation" | "seniority"
+>;
+
+export function Introduction({
+  welcomeText,
+  description,
+  occupation,
+  seniority,
+  fullName,
+}: Props) {
   return (
     <S.Container>
       <S.Box {...leftFadeIn()}>
-        <S.HelloText>Hello there 👋</S.HelloText>
+        <S.HelloText>{welcomeText} 👋</S.HelloText>
         <S.UserBox>
           <S.Avatar src="https://github.com/oigabrielteodoro.png" />
           <section>
-            <strong>Gabriel Teodoro</strong>
+            <strong>{fullName}</strong>
             <small>Product Developer</small>
           </section>
         </S.UserBox>
         <Annotation>
-          I&apos;m <b>Product Developer</b> to 5 years. I started study
-          programming with 13 years age. I really like Front-End and all
-          technologies around <b>TypeScript with React</b>
+          <PrismicRichText field={description} />
         </Annotation>
         <Button>View more</Button>
       </S.Box>
@@ -41,8 +53,8 @@ export function Introduction() {
               <FiBriefcase size={22} />
             </div>
             <div className="textBox">
-              <strong>Middle</strong>
-              <small>Front-End Developer</small>
+              <strong>{seniority}</strong>
+              <small>{occupation}</small>
             </div>
           </li>
           <li>

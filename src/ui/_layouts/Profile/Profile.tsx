@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 
 import { FiLayout } from "react-icons/fi";
 import { BiServer } from "react-icons/bi";
+import { PrismicRichText } from "@prismicio/react";
+
+import type { RichTextField } from "@prismicio/types";
 
 import { Button, Annotation, Tooltip } from "~/ui";
 import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
@@ -11,7 +14,13 @@ import * as S from "./Profile.styled";
 
 type CardType = "Front-End" | "Back-End";
 
-export function Profile() {
+type Props = {
+  title: RichTextField;
+  description: RichTextField;
+  useThisTecnologies: string;
+};
+
+export function Profile({ title, description, useThisTecnologies }: Props) {
   const [activeCard, setActiveCard] = useState<CardType>("Front-End");
 
   function handleActiveCard(cardType: CardType) {
@@ -44,14 +53,12 @@ export function Profile() {
       </motion.div>
       <S.InformationBox {...rightFadeIn({ transition: { delay: 0.5 } })}>
         <S.Title>
-          Talk is cheap. <br />
-          Show me the code!
+          <PrismicRichText field={title} />
         </S.Title>
         <Annotation>
-          I <b>design</b> and <b>code beautifully</b> simple things, and I love
-          what I do.
+          <PrismicRichText field={description} />
         </Annotation>
-        <strong>I use this tecnologies:</strong>
+        <strong>{useThisTecnologies}</strong>
         <ul>
           <Tooltip
             as="li"
