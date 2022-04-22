@@ -11,6 +11,15 @@ export const Container = styled("div", {
   background: "$neutral800",
   borderRadius: "0.8rem",
   border: "0.2rem solid $neutral700",
+  zIndex: 2,
+
+  "&::after": {
+    content: "",
+    position: "absolute",
+    height: "0.8rem",
+    width: "0.8rem",
+    border: "0.2rem solid $neutral700",
+  },
 
   defaultVariants: {
     placement: "top",
@@ -24,14 +33,13 @@ export const Container = styled("div", {
         transform: "translateX(-50%)",
 
         "&::after": {
-          content: "",
-          position: "absolute",
-          borderStyle: "solid",
-          borderWidth: "0.6rem 0.6rem 0 0.6rem",
-          borderColor: "$neutral700 transparent transparent transparent",
-          bottom: "-0.8rem",
+          background: "$neutral800",
+          borderTopColor: "transparent",
+          borderRightColor: "transparent",
+          bottom: "-0.6rem",
           left: "50%",
-          transform: "translateX(-50%)",
+          transform: "translateX(-50%) rotate(-45deg)",
+          zIndex: 1,
         },
       },
     },
