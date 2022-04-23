@@ -4,7 +4,7 @@ import type { PrismicDocument } from "@prismicio/types";
 import { Footer, Header, WithOutSSR } from "~/ui";
 import { Introduction, Profile, Career } from "~/ui/_layouts";
 
-import { createClient } from "~/lib/Prismic";
+import { getActualCompany, getCompanies, getIndexContent } from "~/lib/Prismic";
 import type { Company, IndexContent } from "~/types";
 
 type Props = {
@@ -24,6 +24,9 @@ export default function Home({
     welcomeText: indexContent.data.welcomeText,
     fullName: indexContent.data.fullName,
     occupation: indexContent.data.occupation,
+    startedAt: indexContent.data.startedAt,
+    startedAtText: indexContent.data.startedAtText,
+    contributionsText: indexContent.data.contributionsText,
   };
 
   const profileProps = {
@@ -60,29 +63,11 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const client = createClient();
-
-  const indexContent = await client.getSingle<PrismicDocument<IndexContent>>(
-    "index",
-    { lang: "pt-BR" }
-  );
-
-  const companies = await client.getAllByType<PrismicDocument<Company>>(
-    "company-id",
-    {
-      orderings: {
-        field: "my.company-id.joinedAt",
-        direction: "desc",
-      },
-    }
-  );
-
-  const actualCompanyUid = await client.getSingle("actualCompany");
-
-  const actualCompany = await client.getByUID(
-    "company-id",
-    actualCompanyUid.data.company.uid
-  );
+  const [companies, actualCompany, indexContent] = await Promise.all([
+    getCompanies(),
+    getActualCompany(),
+    getIndexContent(),
+  ]);
 
   return {
     props: {

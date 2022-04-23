@@ -10,6 +10,7 @@ export const Button = styled("button", {
   transition: "opacity 300ms",
   display: "flex",
   alignItems: "center",
+  justifyContent: "center",
 
   "&:hover": {
     opacity: 0.8,

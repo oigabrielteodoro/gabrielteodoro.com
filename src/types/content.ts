@@ -11,4 +11,7 @@ export type IndexContent = {
   profileUseThisTecnologies: string;
   careerTitle: string;
   careerDescription: RichTextField;
+  startedAt: string;
+  startedAtText: string;
+  contributionsText: string;
 };

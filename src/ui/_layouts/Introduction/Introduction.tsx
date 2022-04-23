@@ -2,6 +2,8 @@ import { PrismicRichText } from "@prismicio/react";
 import { AiOutlineExperiment } from "react-icons/ai";
 import { FiBriefcase, FiGithub } from "react-icons/fi";
 
+import { differenceInYears } from "date-fns";
+
 import { Button, Annotation } from "~/ui";
 import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 
@@ -11,7 +13,14 @@ import * as S from "./Introduction.styled";
 
 type Props = Pick<
   IndexContent,
-  "welcomeText" | "description" | "fullName" | "occupation" | "seniority"
+  | "welcomeText"
+  | "description"
+  | "fullName"
+  | "occupation"
+  | "seniority"
+  | "startedAt"
+  | "startedAtText"
+  | "contributionsText"
 >;
 
 export function Introduction({
@@ -20,7 +29,15 @@ export function Introduction({
   occupation,
   seniority,
   fullName,
+  startedAt,
+  startedAtText,
+  contributionsText,
 }: Props) {
+  const startedAtFormatted = `+${differenceInYears(
+    new Date(),
+    new Date(startedAt)
+  )}`;
+
   return (
     <S.Container>
       <S.Box {...leftFadeIn()}>
@@ -44,8 +61,8 @@ export function Introduction({
               <AiOutlineExperiment size={24} />
             </div>
             <div className="textBox">
-              <strong>+5</strong>
-              <small>Years of experience</small>
+              <strong>{startedAtFormatted}</strong>
+              <small>{startedAtText}</small>
             </div>
           </li>
           <li>
@@ -63,7 +80,7 @@ export function Introduction({
             </div>
             <div className="textBox">
               <strong>+250</strong>
-              <small>Contributions this year</small>
+              <small>{contributionsText}</small>
             </div>
           </li>
         </ul>

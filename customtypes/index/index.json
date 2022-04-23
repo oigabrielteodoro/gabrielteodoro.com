@@ -82,6 +82,27 @@
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
+      },
+      "startedAt": {
+        "type": "Timestamp",
+        "config": {
+          "label": "Started At",
+          "placeholder": ""
+        }
+      },
+      "startedAtText": {
+        "type": "Text",
+        "config": {
+          "label": "Started At Text",
+          "placeholder": ""
+        }
+      },
+      "contributionsText": {
+        "type": "Text",
+        "config": {
+          "label": "Contributions Text",
+          "placeholder": ""
+        }
       }
     }
   }
