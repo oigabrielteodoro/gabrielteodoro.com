@@ -79,7 +79,7 @@ export const InformationBox = styled(motion.div, {
   display: "flex",
   flexDirection: "column",
 
-  strong: {
+  "> strong": {
     fontSize: "$large",
     color: "$white",
     fontWeight: "$medium",
@@ -103,6 +103,18 @@ export const TechUsedIcon = styled("img", {
   transition: "transform 300ms",
 });
 
-export const TechUsedText = styled("p", {
-  width: "20rem",
+export const TechUsedInfo = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+
+  strong: {
+    fontWeight: "$medium",
+    fontSize: "$small",
+    color: "$white",
+    marginBottom: "$1",
+  },
+  p: {
+    width: "20rem",
+    fontSize: "$disclaimer",
+  },
 });

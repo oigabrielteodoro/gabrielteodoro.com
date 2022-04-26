@@ -1,18 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { FiLayout } from "react-icons/fi";
 import { BiServer } from "react-icons/bi";
 import { PrismicRichText } from "@prismicio/react";
-
 import type { RichTextField } from "@prismicio/types";
 
 import { Button, Annotation, Tooltip } from "~/ui";
 import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
+import { getOccupations } from "~/lib/Prismic";
+import type { Occupation } from "~/types";
 
 import * as S from "./Profile.styled";
-
-type CardType = "Front-End" | "Back-End";
 
 type Props = {
   title: RichTextField;
@@ -20,36 +19,44 @@ type Props = {
   useThisTecnologies: string;
 };
 
-export function Profile({ title, description, useThisTecnologies }: Props) {
-  const [activeCard, setActiveCard] = useState<CardType>("Front-End");
+const occupationIcon = {
+  "Front-End": <FiLayout size={24} />,
+  "Back-End": <BiServer size={24} />,
+};
 
-  function handleActiveCard(cardType: CardType) {
-    setActiveCard(cardType);
+export function Profile({ title, description, useThisTecnologies }: Props) {
+  const [activeOccupation, setActiveOccupation] = useState<Occupation>();
+  const [occupations, setOccupations] = useState<Occupation[]>([]);
+
+  useEffect(() => {
+    getOccupations().then((occupations) => {
+      setOccupations(occupations);
+      setActiveOccupation(occupations[0]);
+    });
+  }, []);
+
+  function handleActive(occupation: Occupation) {
+    setActiveOccupation(occupation);
   }
 
   return (
     <S.Container>
       <motion.div {...leftFadeIn({ transition: { delay: 0.5 } })}>
-        <S.Card onClick={() => handleActiveCard("Front-End")}>
-          <S.CardTitle active={activeCard === "Front-End"}>
-            <strong>Front-End</strong>
-            <FiLayout size={24} />
-          </S.CardTitle>
-          <small>I develop front-end with coding super smooth</small>
-          <Button type="text" color="neutral">
-            3 projects
-          </Button>
-        </S.Card>
-        <S.Card onClick={() => handleActiveCard("Back-End")}>
-          <S.CardTitle active={activeCard === "Back-End"}>
-            <strong>Back-End</strong>
-            <BiServer size={24} />
-          </S.CardTitle>
-          <small>I develop back-end scalable and performative</small>
-          <Button type="text" color="neutral">
-            5 projects
-          </Button>
-        </S.Card>
+        {occupations.map((occupation) => (
+          <S.Card
+            key={occupation.title}
+            onClick={() => handleActive(occupation)}
+          >
+            <S.CardTitle active={activeOccupation?.title === occupation.title}>
+              <strong>{occupation.title}</strong>
+              {occupationIcon[occupation.title]}
+            </S.CardTitle>
+            <small>{occupation.description}</small>
+            <Button type="text" color="neutral">
+              {occupation.projectsCount} projects
+            </Button>
+          </S.Card>
+        ))}
       </motion.div>
       <S.InformationBox {...rightFadeIn({ transition: { delay: 0.5 } })}>
         <S.Title>
@@ -60,58 +67,23 @@ export function Profile({ title, description, useThisTecnologies }: Props) {
         </Annotation>
         <strong>{useThisTecnologies}</strong>
         <ul>
-          <Tooltip
-            as="li"
-            message={
-              <S.TechUsedText>
-                React.js é utilizado para construção de interfaces.
-              </S.TechUsedText>
-            }
-          >
-            <S.TechUsedIcon
-              src="https://gabrielteodoro.com/static/img/techs/react.svg"
-              alt="React.js"
-            />
-          </Tooltip>
-          <Tooltip
-            as="li"
-            message={
-              <S.TechUsedText>
-                Next.js é utilizado para construção de interfaces.
-              </S.TechUsedText>
-            }
-          >
-            <S.TechUsedIcon
-              src="https://gabrielteodoro.com/static/img/techs/next.svg"
-              alt="NextJS"
-            />
-          </Tooltip>
-          <Tooltip
-            as="li"
-            message={
-              <S.TechUsedText>
-                TypeScript é utilizado para construção de interfaces.
-              </S.TechUsedText>
-            }
-          >
-            <S.TechUsedIcon
-              src="https://gabrielteodoro.com/static/img/techs/typescript.svg"
-              alt="TypeScript"
-            />
-          </Tooltip>
-          <Tooltip
-            as="li"
-            message={
-              <S.TechUsedText>
-                JavaScript é utilizado para construção de interfaces.
-              </S.TechUsedText>
-            }
-          >
-            <S.TechUsedIcon
-              src="https://gabrielteodoro.com/static/img/techs/javascript.svg"
-              alt="JavaScript"
-            />
-          </Tooltip>
+          {activeOccupation?.technologies.map((technology) => (
+            <Tooltip
+              as="li"
+              key={technology.title}
+              message={
+                <S.TechUsedInfo>
+                  <strong>{technology.title}</strong>
+                  <p>{technology.description}</p>
+                </S.TechUsedInfo>
+              }
+            >
+              <S.TechUsedIcon
+                src={technology.logo.url!}
+                alt={technology.logo.alt!}
+              />
+            </Tooltip>
+          ))}
         </ul>
       </S.InformationBox>
     </S.Container>

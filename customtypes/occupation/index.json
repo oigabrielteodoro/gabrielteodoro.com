@@ -1,0 +1,71 @@
+{
+  "id": "occupation",
+  "label": "Occupation Profile",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Select",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "options": [
+            "Front-End",
+            "Back-End",
+            "Mobile",
+            "Design"
+          ],
+          "default_value": "Front-End"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "projectsCount": {
+        "type": "Number",
+        "config": {
+          "label": "Projects Count",
+          "placeholder": ""
+        }
+      },
+      "technologies": {
+        "type": "Group",
+        "config": {
+          "label": "Technologies",
+          "fields": {
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "Logo",
+                "constraint": {
+                  "width": 42,
+                  "height": 42
+                },
+                "thumbnails": []
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Description",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

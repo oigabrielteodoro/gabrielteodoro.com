@@ -1,0 +1,77 @@
+{
+  "id": "78c906e8-dd6b-4929-ba57-c5ea1ec9f655",
+  "uid": "dolore-porro-magni",
+  "type": "occupation",
+  "data": {
+    "title": "Front-End",
+    "description": "integrate enterprise niches",
+    "projectsCount": 5014,
+    "technologies": [
+      {
+        "logo": {
+          "dimensions": {
+            "width": 42,
+            "height": 42
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=42&h=42&fit=crop"
+        },
+        "title": "reinvent transparent platforms",
+        "description": "grow compelling convergence"
+      },
+      {
+        "logo": {
+          "dimensions": {
+            "width": 42,
+            "height": 42
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=42&h=42&fit=crop"
+        },
+        "title": "empower strategic web services",
+        "description": "cultivate integrated applications"
+      },
+      {
+        "logo": {
+          "dimensions": {
+            "width": 42,
+            "height": 42
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=42&h=42&fit=crop"
+        },
+        "title": "transition extensible relationships",
+        "description": "repurpose sexy technologies"
+      },
+      {
+        "logo": {
+          "dimensions": {
+            "width": 42,
+            "height": 42
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=42&h=42&fit=crop"
+        },
+        "title": "scale user-centric e-markets",
+        "description": "incubate front-end experiences"
+      },
+      {
+        "logo": {
+          "dimensions": {
+            "width": 42,
+            "height": 42
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=42&h=42&fit=crop"
+        },
+        "title": "aggregate one-to-one schemas",
+        "description": "drive sticky eyeballs"
+      }
+    ]
+  }
+}
