@@ -11,7 +11,7 @@ import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
 import { getOccupations } from "~/lib/Prismic";
 import type { Occupation } from "~/types";
 
-import * as S from "./Profile.styled";
+import * as S from "./Occupations.styled";
 
 type Props = {
   title: RichTextField;
@@ -24,7 +24,7 @@ const occupationIcon = {
   "Back-End": <BiServer size={24} />,
 };
 
-export function Profile({ title, description, useThisTecnologies }: Props) {
+export function Occupations({ title, description, useThisTecnologies }: Props) {
   const [activeOccupation, setActiveOccupation] = useState<Occupation>();
   const [occupations, setOccupations] = useState<Occupation[]>([]);
 

@@ -2,7 +2,7 @@ import Head from "next/head";
 import type { PrismicDocument } from "@prismicio/types";
 
 import { Footer, Header, WithOutSSR } from "~/ui";
-import { Introduction, Profile, Career } from "~/ui/_layouts";
+import { Introduction, Occupations, Career } from "~/ui/_layouts";
 
 import { getActualCompany, getCompanies, getIndexContent } from "~/lib/Prismic";
 import type { Company, IndexContent } from "~/types";
@@ -29,7 +29,7 @@ export default function Home({
     contributionsText: indexContent.data.contributionsText,
   };
 
-  const profileProps = {
+  const occupationsProps = {
     title: indexContent.data.profileTitle,
     description: indexContent.data.profileDescription,
     useThisTecnologies: indexContent.data.profileUseThisTecnologies,
@@ -49,7 +49,7 @@ export default function Home({
       <main>
         <WithOutSSR>
           <Introduction {...introductionProps} />
-          <Profile {...profileProps} />
+          <Occupations {...occupationsProps} />
           <Career
             actualCompany={actualCompany}
             companies={companies}

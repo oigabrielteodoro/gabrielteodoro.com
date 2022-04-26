@@ -1,3 +1,3 @@
 export * from "./Career";
 export * from "./Introduction";
-export * from "./Profile";
+export * from "./Occupations";
