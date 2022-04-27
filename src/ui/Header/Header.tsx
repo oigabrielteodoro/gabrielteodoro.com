@@ -9,17 +9,7 @@ export function Header() {
     <S.Box>
       <S.Content>
         <Logo />
-        <S.NavigationBox>
-          <S.NavigationList>
-            <li>
-              <button>Home</button>
-            </li>
-            <li>
-              <button>Career</button>
-            </li>
-          </S.NavigationList>
-          <LanguageSelect />
-        </S.NavigationBox>
+        <LanguageSelect />
       </S.Content>
     </S.Box>
   );
