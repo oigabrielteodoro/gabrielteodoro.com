@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { PrismicRichText } from "@prismicio/react";
-import { formatDistance, formatDistanceToNow } from "date-fns";
+import { formatDistance, formatDistanceToNow, Locale } from "date-fns";
+import { ptBR, enUS } from "date-fns/locale";
 import type { PrismicDocument } from "@prismicio/types";
 import type { ElementType } from "react";
 
@@ -14,18 +16,31 @@ type Props = {
   company: PrismicDocument<CompanyType>;
 };
 
+const locales: {
+  [key: string]: Locale;
+} = {
+  "pt-BR": ptBR,
+  "en-US": enUS,
+};
+
 export function Company({
   as,
   company,
   showTime = true,
   showWorkload = true,
 }: Props) {
+  const router = useRouter();
+
   const { joinedAt, exitedAt, url, logo, occupation, workload, name } =
     company.data;
 
+  const formatOptions = {
+    locale: router?.locale ? locales[router.locale] : undefined,
+  };
+
   const time = exitedAt
-    ? formatDistance(new Date(joinedAt), new Date(exitedAt))
-    : formatDistanceToNow(new Date(joinedAt));
+    ? formatDistance(new Date(joinedAt), new Date(exitedAt), formatOptions)
+    : formatDistanceToNow(new Date(joinedAt), formatOptions);
 
   return (
     <S.Container as={as}>
