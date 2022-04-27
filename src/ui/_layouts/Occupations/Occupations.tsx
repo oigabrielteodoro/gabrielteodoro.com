@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
 import { FiLayout } from "react-icons/fi";
@@ -8,7 +9,7 @@ import type { RichTextField } from "@prismicio/types";
 
 import { Button, Annotation, Tooltip } from "~/ui";
 import { leftFadeIn, rightFadeIn } from "~/ui/_animations";
-import { getOccupations } from "~/lib/Prismic";
+import { getOccupations, getPrismicClient } from "~/lib/Prismic";
 import type { Occupation } from "~/types";
 
 import * as S from "./Occupations.styled";
@@ -25,15 +26,23 @@ const occupationIcon = {
 };
 
 export function Occupations({ title, description, useThisTecnologies }: Props) {
+  const router = useRouter();
+
   const [activeOccupation, setActiveOccupation] = useState<Occupation>();
   const [occupations, setOccupations] = useState<Occupation[]>([]);
 
   useEffect(() => {
-    getOccupations().then((occupations) => {
+    const client = getPrismicClient({
+      defaultParams: {
+        lang: router.locale,
+      },
+    });
+
+    getOccupations(client).then((occupations) => {
       setOccupations(occupations);
       setActiveOccupation(occupations[0]);
     });
-  }, []);
+  }, [router.locale]);
 
   function handleActive(occupation: Occupation) {
     setActiveOccupation(occupation);

@@ -1,10 +1,16 @@
 import Head from "next/head";
+import type { GetStaticProps } from "next";
 import type { PrismicDocument } from "@prismicio/types";
 
 import { Footer, Header, WithOutSSR } from "~/ui";
 import { Introduction, Occupations, Career } from "~/ui/_layouts";
 
-import { getActualCompany, getCompanies, getIndexContent } from "~/lib/Prismic";
+import {
+  getActualCompany,
+  getCompanies,
+  getIndexContent,
+  getPrismicClient,
+} from "~/lib/Prismic";
 import type { Company, IndexContent } from "~/types";
 
 type Props = {
@@ -62,11 +68,13 @@ export default function Home({
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const client = getPrismicClient({ defaultParams: { lang: locale } });
+
   const [companies, actualCompany, indexContent] = await Promise.all([
-    getCompanies(),
-    getActualCompany(),
-    getIndexContent(),
+    getCompanies(client),
+    getActualCompany(client),
+    getIndexContent(client),
   ]);
 
   return {
@@ -76,4 +84,4 @@ export async function getStaticProps() {
       indexContent,
     },
   };
-}
+};

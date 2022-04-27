@@ -4,14 +4,15 @@ import type { PrismicDocument } from "@prismicio/types";
 import sm from "~/../sm.json";
 import type { Company, IndexContent, Occupation } from "~/types";
 
-type IndexContentParams = {
-  lang?: "pt-BR" | "en-US";
-};
-
 export const endpoint = sm.apiEndpoint;
-export const client = prismic.createClient(endpoint);
 
-export async function getOccupations(): Promise<Occupation[]> {
+export function getPrismicClient(options?: prismic.ClientConfig) {
+  return prismic.createClient(endpoint, options);
+}
+
+export async function getOccupations(
+  client: prismic.Client
+): Promise<Occupation[]> {
   const occupations = await client.getAllByType("occupation", {
     orderings: {
       field: "my.occupation.title",
@@ -27,7 +28,7 @@ export async function getOccupations(): Promise<Occupation[]> {
   }));
 }
 
-export async function getCompanies() {
+export async function getCompanies(client: prismic.Client) {
   const companies = await client.getAllByType<PrismicDocument<Company>>(
     "company-id",
     {
@@ -41,7 +42,7 @@ export async function getCompanies() {
   return companies;
 }
 
-export async function getActualCompany() {
+export async function getActualCompany(client: prismic.Client) {
   const single = await client.getSingle("actualCompany");
 
   return await client.getByUID<PrismicDocument<Company>>(
@@ -50,12 +51,8 @@ export async function getActualCompany() {
   );
 }
 
-export async function getIndexContent(
-  { lang }: IndexContentParams = { lang: "en-US" }
-) {
-  return await client.getSingle<PrismicDocument<IndexContent>>("index", {
-    lang,
-  });
+export async function getIndexContent(client: prismic.Client) {
+  return await client.getSingle<PrismicDocument<IndexContent>>("index");
 }
 
 export * from "@prismicio/client";
