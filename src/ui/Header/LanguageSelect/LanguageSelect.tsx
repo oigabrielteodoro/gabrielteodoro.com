@@ -37,8 +37,10 @@ export function LanguageSelect() {
     <S.Container>
       <Button type="neutral" onClick={handleToggleSelectList}>
         <S.CountryFlag
-          src={languageSelected.icon}
+          width={70}
+          height={30}
           alt={languageSelected.name}
+          src={languageSelected.icon}
         />
         {languageSelected.name}
         <S.ChevronDownWithMargin open={isOpen} />

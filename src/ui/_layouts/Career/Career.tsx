@@ -41,6 +41,7 @@ export function Career({
             </Annotation>
             <S.Diviser />
             <Company
+              as="div"
               showTime={false}
               showWorkload={false}
               company={actualCompany}

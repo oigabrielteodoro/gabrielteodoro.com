@@ -2,17 +2,20 @@ import Link from "next/link";
 import { PrismicRichText } from "@prismicio/react";
 import { formatDistance, formatDistanceToNow } from "date-fns";
 import type { PrismicDocument } from "@prismicio/types";
+import type { ElementType } from "react";
 
 import * as S from "./Company.styled";
 import type { Company as CompanyType } from "~/types";
 
 type Props = {
+  as?: ElementType;
   showTime?: boolean;
   showWorkload?: boolean;
   company: PrismicDocument<CompanyType>;
 };
 
 export function Company({
+  as,
   company,
   showTime = true,
   showWorkload = true,
@@ -25,7 +28,7 @@ export function Company({
     : formatDistanceToNow(new Date(joinedAt));
 
   return (
-    <S.Container>
+    <S.Container as={as}>
       <Link href={url} passHref>
         <a target="_blank">
           <S.CompanyImage
