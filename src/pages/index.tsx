@@ -1,10 +1,10 @@
-import Head from "next/head";
 import type { GetStaticProps } from "next";
 import type { PrismicDocument } from "@prismicio/types";
 
 import { Footer, Header, WithOutSSR } from "~/ui";
 import { Introduction, Occupations, Career } from "~/ui/_layouts";
 
+import { SEO } from "~/lib/SEO";
 import {
   getActualCompany,
   getCompanies,
@@ -48,9 +48,7 @@ export default function Home({
 
   return (
     <>
-      <Head>
-        <title>Gabriel Teodoro | Product Developer</title>
-      </Head>
+      <SEO />
       <Header />
       <main>
         <WithOutSSR>
